@@ -2,15 +2,11 @@ extends layout
 
 block content
   each section,key in sections
-    section(style="background-image:url(images/#{key}.png)")
+    section(class="lifestyle" style="background-image:url(images/#{key}.png)")
       .content
         .text
           h2=section.title
           p=section.text
           a.button(href=section.cta_link)=section.cta
       div(style="clear:both;")
-  .newsletter
-    form(action="//meetmangrove.us12.list-manage.com/subscribe/post?u=102638a04246423d07cc940f6&id=fe4537fefc" method="post" target="_blank")
-      h3 Stay tuned to the tropics
-      input(type="email" name="email" placeholder="your email address")
-      input(type="submit" value="get our latest news")
+  include newsletter.jade
